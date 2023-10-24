@@ -1,0 +1,576 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+}
+
+html, body {
+    height: 100% ;
+    width: 100%;
+}
+
+*::selection{
+    background-color: #fff;
+    color: #85b502 ;
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 10px;
+    background-color: #000;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #95c11e;
+    border-radius: 30px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #95c11e;
+    border-radius: 50%;
+    position:fixed;
+    z-index: 50;
+}
+#cursor-blur {
+    height: 400px;
+    width: 400px;
+    background-color: #b7f8052f;
+    border-radius: 50%;
+    position:fixed;
+    filter: blur(80px);
+    z-index: 9;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#nav {
+    height: 120px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    padding: 0 150px;
+    justify-content: flex-start;
+    gap: 50px;
+    position: fixed;
+    z-index: 49;
+    background: linear-gradient(to bottom, #0000007d 2%,transparent );
+}
+#nav img {
+    height: 70px;
+    width: 90px;
+    scale: 1;
+    transition: all ease-in-out 0.3s;
+}
+#nav img:hover{
+scale: 0.9;
+}
+#nav ul a{
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 20px 20px;
+    margin: 0 20px;
+    z-index: 50;
+}
+#nav ul a:hover{
+color: #ace022;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+.video-gradient{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 0;
+    background: linear-gradient(to bottom, transparent 8%, #000000e4);
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#main {
+    position: relative;
+    background-color: rgba(14, 13, 13, 0.056);
+    
+
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#page1 {
+    height: 90vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+    padding-top: 50px;
+    /* background: linear-gradient(to bottom, #0000007d 5%,transparent ); */
+}
+#page1 h1 {
+    font-size: 100px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    top: -5px;
+    left: -5px;
+    -webkit-text-stroke: 2px #95c11e;
+    z-index: -1;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#page1 h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+#page1 p {
+    font-size: 20px;
+    font-weight: 400;
+    width: 50%;
+}
+
+#page1 #arrow {
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: -2%;
+    bottom:-11%;
+    border: 2px solid #95c11e;
+    transition: all ease-in-out 0.5s;
+    transition-delay: 0.2s;
+    z-index: 99;
+}
+
+#page1 #arrow i{
+    font-size: 50px;
+    font-weight: 100;
+    transition: all ease-in-out 0.5s;
+    transition-delay: 0.2s;
+}
+
+#page1 #arrow:hover {
+    scale: 0.4;
+    background-color: #95c11e;
+}
+#page1 #arrow:hover i{
+    font-size: 120px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;   
+}
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;   
+    position: relative;
+    padding-top: 50px;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h4 {
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    margin-right: 10px;
+    color: #000;
+    transition: all linear 0.5s;
+    -webkit-text-stroke: 1.5px #cbcbcb;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    padding-right: 10px;
+}
+#scroller h4:hover{
+    color: #95c11e;
+    -webkit-text-stroke: 2px #95c11e;
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#about-us {
+    height: 45vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    margin: 50px 0;
+}
+#about-us img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    padding: 0 10px;
+}
+#about-us-info  {
+    width: 55%;
+    text-align: center;
+}
+#about-us-info h3  {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+#about-us-info p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35px;
+    margin-bottom: 20px;
+    color: #cbcbcb;
+}
+#about-us-info p:nth-child(3){
+    font-size: 17px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#cards-container {
+    /* background-color: red; */
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+    z-index: 10;
+}
+.card{
+    height: 85%;
+    width: 25%;
+    /* background-color: blue; */
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: all ease-in-out 0.5s;
+}
+#card-img {
+    /* background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1); */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 20px;
+    object-fit: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.5s;
+    /* transition-delay: 0.3s; */
+    opacity: 1;
+    scale: 1.1;
+}
+.card:hover #card-img{
+    scale: 1;
+    opacity: 0;
+}
+/* #card2 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C1024&ssl=1);
+}
+#card3 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1);
+} */
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    padding: 30px;
+    padding-top: 110px;
+    opacity: 0;
+    transition-delay: 0.1s;
+    transition: all ease-in-out 0.5s;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.overlay h4 {
+    color: #000;
+    font-size: 40px;
+    text-transform: uppercase;
+    /* white-space: nowrap; */
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.overlay p{
+    color: #00000087;
+    font-size: 18px;
+}
+.card:hover #card-img {
+    /* transform: rotate3d(1,-1,0,15deg); */
+    scale: 1;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#green-div {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #119f3a, #ace022);
+    margin-top: 40px;
+    z-index: 10;
+}
+#green-div h4{
+    width: 50%;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    /* letter-spacing: 2px; */
+}
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 10%;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#page3{
+    height: 80vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 30px 0;
+}
+#page3 p{
+    font-size: 20px;
+    font-weight: 800;
+    width: 60%;
+    line-height: 45px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #cbcbcb;
+}
+#page3 img  {
+    position: absolute;
+    height: 50px;
+}
+#page3 #colon1{
+    top: 20%;
+    left: 10%;
+}
+#page3 #colon2{
+    bottom: 20%;
+    right: 10%;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#page4{
+    height: 30vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 49;
+}
+.elem{
+    height: 70%;
+    width: 25%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.elem h2{
+     height: 100%;
+     width: 100%;
+     background-color: #95c11e;
+     display: flex;
+     color: #000;
+     font-weight: 800;
+     position: absolute;
+     align-items: center;
+     justify-content: center;
+     text-transform: uppercase;
+     font-size: 25px;
+     transition: all ease-in-out 0.7s;
+     z-index: 49;
+}
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease-in-out 0.7s;
+    scale: 1.2;
+}
+.elem:hover h2{
+    color: #fff;
+    /* background: linear-gradient(to bottom,transparent 15%, #0000007d  ); */
+    background-color: transparent;
+}
+.elem:hover img{
+    scale: 1;
+}
+#page4 h1{
+    font-size: 70px;
+    position: absolute;
+    top: -20%;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#footer {
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #119f3a, #ace022 );
+    position: relative;
+    display: flex;
+    align-items:center ;
+    justify-content: flex-start;
+    gap: 6.5vw;
+    padding: 0 100px;
+}
+.footer-last{
+    height: 50vh;
+    width: 100%;
+}
+#footer>img{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+}
+#f1 img{
+    height: 100px;
+    scale: 1;
+    transition: all ease-in-out 0.3s;
+}
+#f1 img:hover{
+    scale: 0.9;
+}
+#f1,#f2,#f3,#f4{
+    top: -30px;
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+}
+
+#f2 h3 {
+    font-size: 25px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+  
+#f3 h3 {
+    font-size: 25px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+#f4 h3 {
+    font-size: 18px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+#f4 h4 {
+    font-size: 23px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+#copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+    position: relative;
+    z-index: 9;
+    gap: 20px;
+    color: #000;
+}
+#copyright h4,#footer a{
+    color: #000;
+    font-weight: 500;
+}
+#copyright h4{
+    font-size: 15px;
+}
+#copyright .change-color:hover{
+    color: #fff;
+    transition: all ease-in-out 0.2s;
+}
+#footer .change-color:hover{
+    color: #fff;
+    transition: all ease-in-out 0.2s;
+}
